@@ -9,6 +9,10 @@ public class Queue<T> { // when I did not specify the T type at here, it gave an
         this.list = new LinkedList<T>();
     }
 
+    public int getSize(){
+        return this.size;
+    }
+    
     public void enQueue(T e){
         this.list.add(e);
         this.size ++;

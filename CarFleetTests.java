@@ -4,7 +4,23 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class CarFleetTests {
-    //TODO: test constructor
+    //Tests for constructor
+    @Test
+    public void CarFleetTest(){
+        CarFleet test = new CarFleet();
+        Assert.assertTrue(test instanceof CarFleet); 
+    }
+
+    @Test
+    public void CarFleetTest2(){
+        CarFleet test = new CarFleet();
+        Assert.assertNotNull(test.getQueue(1));
+        Assert.assertNotNull(test.getQueue(2));
+        Assert.assertNotNull(test.getQueue(3));
+        Assert.assertNull(test.getQueue(4));
+        //check if after constructing, there exists all necessary queue
+    }
+
 
     @Test
     public void addCarTest1(){
@@ -24,13 +40,13 @@ public class CarFleetTests {
     @Test
     public void getQueueTest(){
         CarFleet testObj = new CarFleet();
-        Assert.assertEquals(testObj.getQueue(4), null);
+        Assert.assertNull(testObj.getQueue(4));
     }
 
     @Test
     public void getQueueTest2(){
         CarFleet testObj = new CarFleet();
-        Assert.assertTrue(testObj.getQueue(2) != null);
+        Assert.assertNotNull(testObj.getQueue(2));
     }
 
     @Test
@@ -65,7 +81,7 @@ public class CarFleetTests {
 
     @Test
     public void processRequestsTest3(){
-        CarFleet testObj = new CarFleet(); // all empty queue
+        CarFleet testObj = new CarFleet(); 
         Queue<Integer> cmd = new Queue<Integer>(); 
         cmd.enQueue(2);
         cmd.enQueue(2);
@@ -87,7 +103,7 @@ public class CarFleetTests {
 
     @Test
     public void processRequestsTest4(){
-        CarFleet testObj = new CarFleet(); // all empty queue
+        CarFleet testObj = new CarFleet(); 
         Queue<Integer> cmd = new Queue<Integer>(); 
         cmd.enQueue(2);
         cmd.enQueue(5);

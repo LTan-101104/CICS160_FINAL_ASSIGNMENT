@@ -1,10 +1,25 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 
 public class CarTests {
-    //TODO: write test for constructor
+    //Test for constructors
+    @Test
+    public void CarTest(){ 
+        Car test = new Car(65, 3, 54.5f);
+        assertTrue(test instanceof Car);
+    }
+
+    @Test
+    public void CatTest2(){
+        Car test = new Car(65, 3, 54.5f);
+        assertEquals(test.getId(), 65);
+        assertEquals(test.getPowerSource(), 3);
+        assertEquals(test.getPricePerDay(), 54.5f, 0);
+        //test if all the assigning values of constructor works fine
+    }
     
     @Test
     public void getIdTest(){

@@ -3,12 +3,28 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.LinkedList;
 public class QueueTests {
     
-    //TODO: test constructor
-    
+    //test for constructors
+    @Test
+    public void QueueTest(){
+        Queue<Integer> testObj = new Queue<>();
+        assertTrue(testObj instanceof Queue);
+    }    
+    @Test
+    public void QueueTest1(){
+        Queue<Integer> testObj = new Queue<>();
+        assertEquals(testObj.getSize(), 0); //check if when created, size of queue will be zero
+    }    
+
+    @Test
+    public void QueueTest2(){
+        Queue<Integer> testObj = new Queue<>();
+        assertNotNull(testObj.getInternalList()); //check if when created, the internal list is actually created and exist
+    }
 
     //test enQueue
     @Test

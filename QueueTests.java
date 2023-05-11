@@ -30,9 +30,9 @@ public class QueueTests {
     @Test
     public void enQueueTest(){
         Queue<Integer> testObj = new Queue<>();
-        testObj.enQueue(1);
-        testObj.enQueue(2);
-        testObj.enQueue(3);
+        testObj.enqueue(1);
+        testObj.enqueue(2);
+        testObj.enqueue(3);
         LinkedList<Integer> test = new LinkedList<>();
         for (int i = 1; i < 4; i++){
             test.add(i);
@@ -46,9 +46,9 @@ public class QueueTests {
     @Test
     public void enQueueTest2(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
+        testObj.enqueue("Hello");
         assertEquals(testObj.getInternalList().get(0), "Hello");
-        testObj.enQueue("Test");
+        testObj.enqueue("Test");
         assertEquals(testObj.getInternalList().get(1), "Test");
     }
 
@@ -56,38 +56,38 @@ public class QueueTests {
     @Test
     public void deQueueTest1(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
-        testObj.enQueue("Test");
-        testObj.enQueue("World");
-        assertEquals(testObj.deQueue(), "Hello");
+        testObj.enqueue("Hello");
+        testObj.enqueue("Test");
+        testObj.enqueue("World");
+        assertEquals(testObj.dequeue(), "Hello");
     }
 
     @Test
     public void deQueueTest2(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
-        testObj.enQueue("Test");
-        testObj.enQueue("World");
-        testObj.deQueue();
+        testObj.enqueue("Hello");
+        testObj.enqueue("Test");
+        testObj.enqueue("World");
+        testObj.dequeue();
         assertEquals(testObj.getInternalList().get(0), "Test");
     }
 
     @Test
     public void testPeek1(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
-        testObj.enQueue("Test");
-        testObj.enQueue("World");
+        testObj.enqueue("Hello");
+        testObj.enqueue("Test");
+        testObj.enqueue("World");
         assertEquals(testObj.peek(), "Hello");
     }
 
     @Test
     public void testPeek2(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
-        testObj.enQueue("Test");
-        testObj.enQueue("World");
-        testObj.deQueue();
+        testObj.enqueue("Hello");
+        testObj.enqueue("Test");
+        testObj.enqueue("World");
+        testObj.dequeue();
         assertEquals(testObj.peek(), "Test");
     }
 
@@ -95,9 +95,9 @@ public class QueueTests {
     @Test
     public void testisEmpty(){
         Queue<String> testObj = new Queue<>();
-        testObj.enQueue("Hello");
-        testObj.enQueue("Test");
-        testObj.enQueue("World");
+        testObj.enqueue("Hello");
+        testObj.enqueue("Test");
+        testObj.enqueue("World");
         assertFalse(testObj.isEmpty());
     }
 

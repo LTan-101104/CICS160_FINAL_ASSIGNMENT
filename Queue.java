@@ -13,12 +13,12 @@ public class Queue<T> { // when I did not specify the T type at here, it gave an
         return this.size;
     }
     
-    public void enQueue(T e){
+    public void enqueue(T e){
         this.list.add(e);
         this.size ++;
     }
 
-    public T deQueue(){
+    public T dequeue(){
         this.size --;
         return this.list.removeFirst();
     }

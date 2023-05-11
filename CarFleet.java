@@ -21,20 +21,20 @@ public class CarFleet {
     public boolean addCar(Car obj){
         int powerSource = obj.getPowerSource();
         if (! this.CmdToCar.containsKey(powerSource)) return false;
-        this.CmdToCar.get(powerSource).enQueue(obj);
+        this.CmdToCar.get(powerSource).enqueue(obj);
         return true;
     }
 
     public ArrayList<Car> processRequests(Queue<Integer> cmd){
         ArrayList<Car> res = new ArrayList<Car>();
         while (!cmd.isEmpty()){
-            int pS = cmd.deQueue();
+            int pS = cmd.dequeue();
             if (!(this.CmdToCar.containsKey(pS)) || this.CmdToCar.get(pS).isEmpty()) {
                 Car obj = new Car(0, 0,0.0f);
                 res.add(obj);
                 continue;
             }
-            res.add(this.CmdToCar.get(pS).deQueue());
+            res.add(this.CmdToCar.get(pS).dequeue());
         }
         return res;
     }

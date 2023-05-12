@@ -14,6 +14,7 @@ public class QueueTests {
         Queue<Integer> testObj = new Queue<>();
         assertTrue(testObj instanceof Queue);
     }    
+    
     @Test
     public void QueueTest1(){
         Queue<Integer> testObj = new Queue<>();
